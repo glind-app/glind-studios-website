@@ -6,6 +6,8 @@ export default function App() {
     <div className="root-wrapper">
       <FoxScene />
 
+      <p className="wordmark">glind studios</p>
+
       <svg className="annotation-svg" viewBox="0 0 1000 700" preserveAspectRatio="none">
         <defs>
           {/* Slight displacement for hand-drawn wobble */}

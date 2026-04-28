@@ -18,12 +18,24 @@ canvas {
   pointer-events: none;
 }
 
+.wordmark {
+  position: absolute;
+  top: 4rem;
+  left: 15%;
+  font-family: "Basquiat", sans-serif;
+  font-size: 3rem;
+  color: #222;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: left center;
+}
+
 .annotation-text {
   position: absolute;
   bottom: 14%;
   right: 7%;
   width: 200px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 0.58rem;
   font-weight: 300;
   line-height: 1.8;
