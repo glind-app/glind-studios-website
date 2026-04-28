@@ -6,7 +6,7 @@ import Fox from './Fox'
 export default function FoxScene() {
   return (
     <Canvas
-      camera={{ position: [0, 1.5, 5], fov: 45 }}
+      camera={{ position: [0, 0.5, 8], fov: 35 }}
       gl={{ antialias: true }}
       style={{ background: '#ffffff', width: '100%', height: '100%' }}
     >

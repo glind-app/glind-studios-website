@@ -1,5 +1,32 @@
+.root-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 canvas {
   display: block;
   width: 100% !important;
   height: 100% !important;
+}
+
+.annotation-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.annotation-text {
+  position: absolute;
+  bottom: 14%;
+  right: 7%;
+  width: 200px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #999;
+  pointer-events: none;
 }
