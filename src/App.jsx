@@ -1,5 +1,5 @@
-import './App.css'
-import FoxScene from './components/FoxScene'
+import "./App.css";
+import FoxScene from "./components/FoxScene";
 
 export default function App() {
   return (
@@ -8,22 +8,58 @@ export default function App() {
 
       <p className="wordmark">glind studios</p>
 
-      <svg className="annotation-svg" viewBox="0 0 1000 700" preserveAspectRatio="none">
+      <div className="wordmark-sub">
+        this is our playground where we take chances on cool ideas.
+      </div>
+
+      <div className="shipped">
+        <span className="shipped-label">some things we shipped</span>
+        <a href="https://www.glind.app" className="shipped-item" target="_blank" rel="noreferrer">
+          glind -{">"} a low SM app
+        </a>
+        <a href="#" className="shipped-item shipped-item--incoming" onClick={(e) => e.preventDefault()}>
+          papillon (incoming) -{">"} <span className="redacted" />
+        </a>
+        <a href="#" className="shipped-item shipped-item--incoming" onClick={(e) => e.preventDefault()}>
+          horizon (incoming) -{">"} <span className="redacted" />
+        </a>
+      </div>
+
+      <svg
+        className="annotation-svg"
+        viewBox="0 0 1000 700"
+        preserveAspectRatio="none"
+      >
         <defs>
           {/* Slight displacement for hand-drawn wobble */}
           <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="2" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.04"
+              numOctaves="3"
+              seed="2"
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="2.5"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
           </filter>
         </defs>
 
         {/* Doodle curved arrow — from fox body toward text */}
-        <g filter="url(#rough)" stroke="#aaa" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <g
+          filter="url(#rough)"
+          stroke="#aaa"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           {/* Starts from right side of fox, curves down-right to text */}
-          <path
-            d="M 565 430 C 620 460, 700 510, 770 555"
-            strokeWidth="1.4"
-          />
+          <path d="M 565 430 C 620 460, 700 510, 770 555" strokeWidth="1.4" />
           {/* Hand-drawn arrowhead */}
           <path d="M 770 555 L 750 546" strokeWidth="1.4" />
           <path d="M 770 555 L 760 537" strokeWidth="1.4" />
@@ -31,10 +67,10 @@ export default function App() {
       </svg>
 
       <div className="annotation-text">
-        we're pareto good and this is our place of experimentation.
-        just like the fox from isaiah berlin's allegory, we are
-        the jack of all trades and master of some.
+        we're pareto good and this is our place of experimentation. just like
+        the fox from isaiah berlin's allegory, we are the jack of all trades and
+        master of some.
       </div>
     </div>
-  )
+  );
 }

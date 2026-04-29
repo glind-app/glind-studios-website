@@ -30,6 +30,90 @@ canvas {
   transform-origin: left center;
 }
 
+.wordmark-sub {
+  position: absolute;
+  top: calc(4rem + 3.6rem + 0.5rem);
+  left: 15%;
+  width: 220px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #999;
+  pointer-events: none;
+}
+
+.shipped {
+  position: absolute;
+  bottom: 4rem;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #999;
+}
+
+.shipped-label {
+  color: #555;
+  margin-bottom: 0.15rem;
+}
+
+.shipped-item {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  text-underline-offset: 3px;
+}
+
+.shipped-item:hover {
+  color: #222;
+  text-decoration: underline;
+  text-decoration-color: #222;
+}
+
+.shipped-item--incoming {
+  position: relative;
+}
+
+.shipped-item--incoming::after {
+  content: "psssss, you'll find out at the right moment \2764";
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  white-space: nowrap;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.55rem;
+  font-weight: 300;
+  color: #fff;
+  background: #222;
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.shipped-item--incoming:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.redacted {
+  display: inline-block;
+  width: 6.5em;
+  height: 0.7em;
+  background: #222;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+
 .annotation-text {
   position: absolute;
   bottom: 14%;
