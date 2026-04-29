@@ -4,6 +4,11 @@
   height: 100%;
 }
 
+.fox-container {
+  width: 100%;
+  height: 100%;
+}
+
 canvas {
   display: block;
   width: 100% !important;
@@ -25,9 +30,34 @@ canvas {
   font-family: "Basquiat", sans-serif;
   font-size: 3rem;
   color: #222;
-  pointer-events: none;
   user-select: none;
   transform-origin: left center;
+  cursor: default;
+}
+
+.wordmark::after {
+  content: "our LLC is registered in Bucharest 🇷🇴";
+  position: absolute;
+  bottom: calc(100% + 8px);
+  top: auto;
+  left: 0;
+  white-space: nowrap;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.55rem;
+  font-weight: 300;
+  color: #fff;
+  background: #222;
+  padding: 4px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.wordmark:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .wordmark-sub {
@@ -78,6 +108,31 @@ canvas {
   text-decoration-color: #222;
 }
 
+.shipped-item--glind {
+  position: relative;
+}
+
+.glind-logo-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.shipped-item--glind:hover .glind-logo-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .shipped-item--incoming {
   position: relative;
 }
@@ -118,6 +173,116 @@ canvas {
   margin-bottom: 1px;
 }
 
+.team {
+  position: absolute;
+  top: 5rem;
+  right: 20%;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 300;
+}
+
+.team-trigger {
+  color: #999;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.team-contact {
+  margin-top: 0.3rem;
+  color: #bbb;
+  font-size: 0.55rem;
+  line-height: 1.6;
+}
+
+.team-email {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.team-email:hover {
+  color: #222;
+}
+
+.team:hover .team-trigger {
+  color: #222;
+}
+
+.team-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 280px;
+  background: #222;
+  border-radius: 4px;
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.team:hover .team-tooltip,
+.team-tooltip:hover {
+  pointer-events: all;
+}
+
+.team:hover .team-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.team-name {
+  color: #fff;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+a.team-name:hover {
+  color: #aaa;
+  text-decoration: underline;
+  text-decoration-color: #aaa;
+}
+
+.team-role {
+  color: #888;
+  font-size: 0.55rem;
+  line-height: 1.7;
+}
+
+.venn-svg {
+  width: 230px;
+  display: block;
+}
+
+.venn-label {
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+  font-weight: 300;
+  fill: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.venn-label:hover {
+  fill: #fff;
+}
+
 .annotation-link {
   color: #999;
   text-underline-offset: 2px;
@@ -140,4 +305,110 @@ canvas {
   line-height: 1.8;
   color: #999;
   pointer-events: none;
+}
+
+@media (max-width: 632px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .root-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 1.5rem 3rem;
+    position: relative;
+  }
+
+  .wordmark {
+    order: 1;
+    position: static;
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    z-index: 1000000;
+  }
+
+  .wordmark-sub {
+    order: 2;
+    position: static;
+    width: 100%;
+    margin-top: 0.6rem;
+    z-index: 10000;
+  }
+
+  .fox-container {
+    order: 3;
+    height: 50vh;
+    flex-shrink: 0;
+    margin: -4rem -1.5rem 0;
+    width: calc(100% + 3rem);
+  }
+
+  .annotation-text {
+    order: 4;
+    position: static;
+    width: 100%;
+    margin-top: 0;
+    pointer-events: all;
+  }
+
+  .shipped {
+    order: 5;
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .team {
+    order: 6;
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .annotation-svg {
+    position: fixed;
+  }
+
+  .team-trigger {
+    cursor: pointer;
+  }
+
+  .team-tooltip {
+    position: static;
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+    gap: 10px;
+    margin-top: 0.75rem;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .team--open .team-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .team-name {
+    color: #555;
+  }
+
+  .team-role {
+    color: #aaa;
+  }
+
+  .venn-svg circle {
+    stroke: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .venn-label {
+    fill: #777;
+  }
 }
