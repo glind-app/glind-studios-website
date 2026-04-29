@@ -133,6 +133,60 @@ canvas {
   transform: translateY(0);
 }
 
+.shipped-item--papillon {
+  position: relative;
+}
+
+.shipped-item--papillon::after {
+  bottom: calc(100% + 8px + 64px + 6px);
+}
+
+.papillon-logo-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.shipped-item--papillon:hover .papillon-logo-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shipped-item--horizon {
+  position: relative;
+}
+
+.shipped-item--horizon::after {
+  bottom: calc(100% + 8px + 64px + 6px);
+}
+
+.horizon-logo-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.shipped-item--horizon:hover .horizon-logo-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .shipped-item--incoming {
   position: relative;
 }
@@ -379,21 +433,14 @@ a.team-name:hover {
 
   .team-tooltip {
     position: static;
-    opacity: 0;
-    transform: translateY(4px);
-    pointer-events: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
     background: none;
     padding: 0;
     width: 100%;
     gap: 10px;
     margin-top: 0.75rem;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .team--open .team-tooltip {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
   }
 
   .team-name {

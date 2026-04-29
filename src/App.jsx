@@ -192,17 +192,19 @@ export default function App() {
         </a>
         <a
           href="#"
-          className="shipped-item shipped-item--incoming"
+          className="shipped-item shipped-item--incoming shipped-item--papillon"
           onClick={(e) => e.preventDefault()}
         >
           papillon (incoming) -{">"} <span className="redacted" />
+          <img src="/papillon.png" className="papillon-logo-tooltip" alt="papillon" />
         </a>
         <a
           href="#"
-          className="shipped-item shipped-item--incoming"
+          className="shipped-item shipped-item--incoming shipped-item--horizon"
           onClick={(e) => e.preventDefault()}
         >
           horizon (incoming) -{">"} <span className="redacted" />
+          <img src="/fox.png" className="horizon-logo-tooltip" alt="horizon" />
         </a>
       </div>
 
