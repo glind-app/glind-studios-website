@@ -66,7 +66,9 @@ canvas {
   color: #999;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
   text-underline-offset: 3px;
 }
 
@@ -96,7 +98,9 @@ canvas {
   pointer-events: none;
   opacity: 0;
   transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .shipped-item--incoming:hover::after {
@@ -114,11 +118,22 @@ canvas {
   margin-bottom: 1px;
 }
 
+.annotation-link {
+  color: #999;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+  pointer-events: all;
+}
+
+.annotation-link:hover {
+  color: #222;
+}
+
 .annotation-text {
   position: absolute;
   bottom: 14%;
   right: 7%;
-  width: 200px;
+  width: 230px;
   font-family: "Roboto Mono", monospace;
   font-size: 0.58rem;
   font-weight: 300;

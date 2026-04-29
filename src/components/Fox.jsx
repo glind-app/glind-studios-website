@@ -44,7 +44,7 @@ export default function Fox() {
 
   return (
     <group ref={floatRef}>
-      <Center scale={1.1}>
+      <Center scale={0.9}>
         <primitive ref={group} object={scene} rotation={[0, Math.PI + 30, 0]} />
       </Center>
     </group>
